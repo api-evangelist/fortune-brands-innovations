@@ -4,144 +4,38 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Fortune Brands Innovations
 providerId: fortune-brands-innovations
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: false
 tags:
   - Home Products
   - Hardware
+  - Connected Home
   - Security
-description: Machine-readable plans and pricing scaffold for this API provider. Conforms to the API Commons
-  Plans schema. Tier limits and prices are scaffold defaults; replace with provider-published values.
+description: Fortune Brands Innovations (FBIN) is a publicly traded holding company for home, security, and outdoor brands (Moen, Master Lock, Yale, House of Rohl, Therma-Tru, Fiberon, etc.). FBIN itself does not operate a developer portal or publish APIs; consumer/connected-product APIs sit at the brand level (e.g. Moen Smart Water Network, Yale Home / Yale Connect, Master Lock Vault Enterprise). No public developer pricing exists at the FBIN parent level.
+notes: Parent-corp providerId. No FBIN-level developer APIs to price. Brand-level APIs (Moen, Yale, Master Lock) are consumer/IoT and partner-licensed; FBIN does not aggregate them under a unified pricing scheme. Scaffold reduced to a single "no-public-API-program" plan.
+sources:
+  - https://www.fbin.com/
 plans:
-  - id: fortune-brands-innovations-free
-    name: Free
-    type: freemium
-    description: Free entry tier for the Fortune Brands Innovations API surface. Intended for evaluation,
-      prototyping, and low-volume integrations. Real limits and pricing must be reconciled with the provider's
-      published plan documentation.
-    entries:
-      - label: API Requests
-        description: Monthly API request quota across all included endpoints
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 1000
-        timeFrame: month
-        geo: global
-        domains:
-          - https://api.fbin.com
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the free tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 10
-        timeFrame: minute
-        geo: global
-        domains:
-          - https://api.fbin.com
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-    elements:
-      - name: Public Documentation
-      - name: Community Support
-      - name: Sandbox Access
-      - name: Fortune Brands Innovations API
-  - id: fortune-brands-innovations-pro
-    name: Professional
-    type: paid
-    description: Production tier for Fortune Brands Innovations. Provides higher quotas, priority support,
-      and access to the broader API portfolio. Pricing placeholder; align with the provider's pricing
-      page.
-    entries:
-      - label: API Requests
-        description: Monthly API request quota
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 100000
-        timeFrame: month
-        geo: global
-        domains:
-          - https://api.fbin.com
-        unit: 1
-        price: TBD
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the professional tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 100
-        timeFrame: minute
-        geo: global
-        domains:
-          - https://api.fbin.com
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Overage
-        description: Per-request price after monthly quota is exceeded
-        name: overage
-        type: metered
-        metric: requests
-        limit: -1
-        timeFrame: month
-        geo: global
-        domains:
-          - https://api.fbin.com
-        unit: 1000
-        price: TBD
-        userMultiplied: false
-    elements:
-      - name: All Production Endpoints
-      - name: Email Support
-      - name: SLA Targets
-      - name: Webhook Subscriptions
-      - name: Fortune Brands Innovations API
-  - id: fortune-brands-innovations-enterprise
-    name: Enterprise
+  - id: fortune-brands-innovations-no-public-api-program
+    name: No Public API Program (Holding Company)
     type: enterprise
-    description: Custom-negotiated tier for Fortune Brands Innovations. Includes dedicated capacity, contractual
-      SLAs, security review, data residency options, and named technical account management.
+    description: FBIN as a parent corporation does not offer a unified developer API program or public pricing. Developer access to specific brands (Moen Smart Water, Yale, Master Lock, etc.) is governed by each brand's own partner program and is contact-sales / partner-by-invite.
     entries:
-      - label: API Requests
-        description: Negotiated request volume; -1 indicates uncapped subject to fair use
-        name: api_requests
-        type: quota
-        metric: requests
+      - label: Brand-Level Partner Access
+        description: Access negotiated separately with each FBIN brand
+        name: brand_partner_access
+        type: flat
+        metric: varies
         limit: -1
-        timeFrame: month
-        geo: configurable
-        domains:
-          - https://api.fbin.com
+        timeFrame: usage
+        geo: global
+        domains: []
         unit: 1
-        price: custom
-        userMultiplied: false
-      - label: Rate Limit
-        description: Negotiated burst and steady-state rate
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 1000
-        timeFrame: minute
-        geo: configurable
-        domains:
-          - https://api.fbin.com
-        unit: 1
-        price: custom
+        price: contact brand sales
         userMultiplied: false
     elements:
-      - name: Unlimited / Negotiated Volume
-      - name: 24/7 Dedicated Support
-      - name: Contractual SLA
-      - name: Security & Compliance Review
-      - name: Dedicated Account Manager
-      - name: Custom Data Residency
-      - name: Fortune Brands Innovations API
-maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+      - name: Moen Smart Water (separate brand program)
+      - name: Yale Home / Yale Connect (separate brand program)
+      - name: Master Lock Vault Enterprise (separate brand program)
+      - name: No Unified FBIN Developer Portal
+maintainers: []
