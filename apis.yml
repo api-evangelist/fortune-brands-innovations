@@ -29,6 +29,8 @@ apis:
     description: >-
       The Fortune Brands Innovations API provides access to platform services and data for enterprise integration and automation.
 common:
+  - type: DomainSecurity
+    url: security/fortune-brands-innovations-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/fortune-brands-innovations
   - type: Website
