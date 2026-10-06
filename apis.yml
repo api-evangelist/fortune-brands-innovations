@@ -34,7 +34,7 @@ tags:
 description: >-
   Fortune Brands Innovations is a major US corporation and Fortune 1000 company. The Fortune Brands Innovations API provides programmatic access to its platform services, data, and integrations for enterprise customers and partners.
 created: '2026-04-19'
-modified: '2026-04-19'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
   - aid: fortune-brands-innovations:fortune-brands-innovations-api
@@ -52,6 +52,10 @@ apis:
     description: >-
       The Fortune Brands Innovations API provides access to platform services and data for enterprise integration and automation.
 common:
+  - url: https://www.fbin.com/stories/
+    type: Blog
+  - url: https://www.fbin.com/stories/feed/
+    type: BlogRSS
   - type: DomainSecurity
     url: security/fortune-brands-innovations-domain-security.yml
   - type: LinkedIn
