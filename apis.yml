@@ -52,6 +52,12 @@ apis:
     description: >-
       The Fortune Brands Innovations API provides access to platform services and data for enterprise integration and automation.
 common:
+  - type: Plans
+    url: plans/fortune-brands-innovations-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/fortune-brands-innovations-rate-limits.yml
+  - type: FinOps
+    url: finops/fortune-brands-innovations-finops.yml
   - url: https://www.fbin.com/stories/
     type: Blog
   - url: https://www.fbin.com/stories/feed/
