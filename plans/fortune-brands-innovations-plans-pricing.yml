@@ -42,3 +42,19 @@ plans:
       - name: Master Lock Vault Enterprise (separate brand program)
       - name: No Unified FBIN Developer Portal
 maintainers: []
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - subscription
+  units:
+  - negotiated
+  plans:
+  - name: No Public API Program (Holding Company)
+    access: enterprise
+    model: subscription
+    model_how: derived
+    units:
+    - negotiated
+    periods:
+    - per-use
